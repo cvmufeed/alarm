@@ -1,22 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <TimePicker
         android:id="@+id/timePicker"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+        android:layout_height="wrap_content" />
 
     <ToggleButton
         android:id="@+id/toggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
         android:checked="false"
-        android:onClick="OnToggleClicked" />
+        android:onClick="OnToggleClicked"
+        android:layout_below="@id/timePicker"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_00_00_00"
+        android:id="@+id/timer_value"
+        android:layout_below="@id/toggleButton"
+        android:textSize="50sp"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timer_start"
+        android:text="@string/start"
+        android:layout_below="@id/timer_value"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timer_stop"
+        android:text="@string/stop"
+        android:layout_toRightOf="@id/timer_start"
+        android:layout_below="@id/timer_value"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timer_reset"
+        android:text="@string/reset"
+        android:layout_toRightOf="@id/timer_stop"
+        android:layout_below="@id/timer_value"/>
+</RelativeLayout>
 
-</LinearLayout>
+</ScrollView>
